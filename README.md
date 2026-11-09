@@ -20,8 +20,7 @@ On top of this base, V3DSAM contributes two results:
    geometric clustering in the SL(4) globally-consistent world frame. The same physical
    object is re-identified across loop closures via overlap in world coordinates.
 
-> 本仓库为 SCI 稿件《V3DSAM》的**最终代码**开源版，供复现两处贡献的全部实验数字。稿件源稿见
-> [`docs/`](docs/)（中文）。
+> 本仓库为 SCI 稿件《V3DSAM》的**最终代码**开源版，供复现两处贡献的全部实验数字。
 
 ---
 
@@ -82,7 +81,6 @@ V3DSAM/
 │   ├── paper/                     #   figure generation + md→docx conversion
 │   └── run/                       #   shell launchers (incl. AutoDL reproduction)
 ├── data/README.md                 # dataset + intermediate-artifact conventions
-└── docs/                          # Chinese paper source + technical / work summary
 ```
 
 `third_party/` is **not** bundled — `setup.sh` clones `vggt` (VGGT_SPARK), `sam3`,
@@ -174,7 +172,7 @@ python vggt_slam/pipeline.py --image_dir ... --stage all --num_iters 3000
 ```
 
 > Concrete argument values, path conventions, and AutoDL environment details are in each
-> script's docstring and in `docs/技术总结报告.md`.
+> script's docstring.
 
 ---
 
@@ -223,7 +221,20 @@ these scripts; nothing is hard-coded into the tables.
 
 ## License
 
-[BSD 2-Clause](LICENSE). Third-party components (`vggt`, `sam3`, `perception_models`,
-`salad`) are installed separately and retain their own licenses (see [`setup.sh`](setup.sh)
-and each upstream repository). `vggt_slam/` and `vggt_slam_official/` derive from
-VGGT-SLAM 2.0 (MIT-SPARK).
+V3DSAM is distributed under the [BSD 2-Clause License](LICENSE), retaining the upstream
+VGGT-SLAM copyright (`Copyright (c) 2025, MIT-SPARK`). `vggt_slam/` and
+`vggt_slam_official/` derive from [VGGT-SLAM 2.0](https://github.com/MIT-SPARK/VGGT-SLAM).
+
+Third-party components are **installed separately** by [`setup.sh`](setup.sh) and retain
+their own licenses:
+
+| Component | License |
+| --- | --- |
+| VGGT (facebookresearch/vggt) | Custom Meta license |
+| SAM3 (facebookresearch/sam3) | Custom Meta license |
+| Perception Encoder (facebookresearch/perception_models) | Apache-2.0 |
+| SALAD (Dominic101/salad) | GPL-3.0 |
+
+> Note: SALAD is GPL-3.0. It is used only as a standalone appearance-retrieval dependency
+> (not linked into V3DSAM's own code), so V3DSAM itself remains BSD-2-Clause — but any
+> redistribution of a combined bundle must comply with each component's terms.
