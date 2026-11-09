@@ -22,12 +22,4 @@
 | `_scannet_upload/*.tar` | ~1.3 GB | 打包上传的原始色图/位姿 |
 
 这些文件由 `scripts/semantic/gen_semantic_cloud_10m.py` 与 `scripts/frontend/gen_npz_scan.py`
-生成，路径约定见各脚本头部 docstring。
-
-## 结果数据（已随仓库分发，`results/`）
-
-- 回环头对头 / 消融真实数据：`results/e1_head2head.json`、`results/e3_noise.json`、
-  `results/pr_curve_summary.json`
-- 消融表：`results/honest_table4.md`、`results/honest_table5.md`
-
-这些 JSON/md 是稿件中贡献 1 相关实验数字的**唯一事实来源**，由对应脚本生成、可直接复核。
+生成，路径约定见各脚本头部 docstring。所有实验数字均由对应脚本从这些数据重新生成。
