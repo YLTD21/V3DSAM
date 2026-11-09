@@ -1,0 +1,72 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ---- virtual env / deps ----
+venv/
+.venv/
+env/
+ENV/
+*.conda
+conda-env/
+third_party/
+
+# ---- data / intermediate (not distributed) ----
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.ply
+*.pcd
+*.mp4
+*.tar
+*.tar.gz
+datasets/
+scannet_all/
+semantic_cloud_10m/
+_scannet_upload/
+out_*/
+output/
+experiments/
+experiment_logs/
+final_results/
+ckpt/
+checkpoints/
+
+# ---- logs ----
+*.log
+logs/
+runs/
+
+# ---- large image exports (regenerate with scripts) ----
+figures/reconstruction/psnr_tum/room/nvs_eval/
+*.svg
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
